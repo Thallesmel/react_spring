@@ -1,0 +1,62 @@
+.CardCompleto {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem 2rem 2rem 2rem;
+  align-items: center;
+  gap: 5rem;
+  height: 30rem;
+  width: auto;
+  overflow:scroll;
+}
+.titulo {
+  display: flex;
+  flex-direction: column;
+  height: 8rem;
+  width: 15rem;
+  margin-bottom: 5rem;
+}
+.titulo > :nth-child(2) {
+  font-weight: bold;
+  color: rgb(66, 192, 66);
+  display: flex;
+}
+.descricao {
+  display: flex;
+  height: 5rem;
+  width: 15rem;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
+  border-top: 2px solid rgb(255, 75, 75);
+}
+.cardp {
+  display: flex;
+  height: 22rem;
+  width: 24rem;
+  min-width: 22rem;
+  min-height: 20rem;
+  border-radius: 30px;
+  padding: 2rem 2rem 2rem 2rem;
+  box-shadow: 2px 4px 8px 0px rgba(87, 87, 87, 0.473);
+  justify-content: center;
+  flex-direction: column;
+  transition: 0.1s ease-in;
+  margin: 1rem;
+}
+.cardp:hover {
+  transform: scale(1.1);
+}
+.botao {
+  font-weight: bold;
+  background-color: white;
+  color: rgb(66, 192, 66);
+  border-radius: 30px;
+  border: solid 2px rgb(66, 192, 66);
+  transition: 0.1s ease-in;
+}
+.botao:hover {
+  transform: scale(1.1);
+  background-color: rgb(66, 192, 66);
+  color: white;
+  border: none;
+}
