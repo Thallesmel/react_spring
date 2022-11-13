@@ -1,12 +1,12 @@
-package br.com.api.produtos.servico;
+package modules.product.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import br.com.api.produtos.modelo.ProdutoModelo;
 import br.com.api.produtos.modelo.RespostaModelo;
-import br.com.api.produtos.repositorio.ProdutoRepositorio;
+import modules.product.model.ProdutoModelo;
+import modules.product.repository.ProdutoRepositorio;
 
 @Service
 public class ProdutoServico {

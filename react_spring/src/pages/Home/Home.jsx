@@ -5,8 +5,12 @@ import Slide from '../../components/Slide/Slide';
 function Home() {
   return (
     <div className='Home'>
-      <Navbar />
-      <Slide />
+      <div className='container'>
+        <Navbar />
+      </div>
+      <div className='first-intro'>
+        <Slide />
+      </div>
     </div>
   );
 }

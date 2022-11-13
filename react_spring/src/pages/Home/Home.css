@@ -1,3 +1,17 @@
-.Home > Navbar {
-    margin-left: 20rem;
+.Home {
+    display: flex;
+    height: 80vh;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.container {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    align-items: center;
+}
+.first-intro {
+    margin-top: -1rem;
 }

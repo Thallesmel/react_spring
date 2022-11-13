@@ -1,7 +1,4 @@
-package br.com.api.produtos.controle;
-
-import java.util.Optional;
-
+package modules.product.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -12,45 +9,41 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
 import br.com.api.produtos.modelo.RespostaModelo;
-import br.com.api.produtos.modelo.UsuarioModelo;
-import br.com.api.produtos.servico.UsuarioServico;
+import modules.product.model.ProdutoModelo;
+import modules.product.services.ProdutoServico;
 
 @RestController
 @CrossOrigin(origins = "*")
-public class UsuarioControle {
+public class ProdutoControle {
 
     @Autowired
-    private UsuarioServico ps;
+    private ProdutoServico ps;
 
-    @DeleteMapping("/UsuarioRemover/{codigo}")
+    @DeleteMapping("/remover/{codigo}")
     public ResponseEntity<RespostaModelo> remover(@PathVariable long codigo) {
         return ps.remover(codigo);
     }
 
-    @PutMapping("/UsuarioAlterar")
-    public ResponseEntity<?> alterar(@RequestBody UsuarioModelo pm) {
+    @PutMapping("/alterar")
+    public ResponseEntity<?> alterar(@RequestBody ProdutoModelo pm) {
         return ps.cadastrarAlterar(pm, "alterar");
     }
 
-    @GetMapping("/UsuarioSelecionar/{codigo}")
-    public Optional<UsuarioModelo> selecionar(@PathVariable long codigo) {
-        return ps.selecionar(codigo);
-    }
-
-    @PostMapping("/UsuarioCadastrar")
-    public ResponseEntity<?> cadastrar(@RequestBody UsuarioModelo pm) {
+    @PostMapping("/cadastrar")
+    public ResponseEntity<?> cadastrar(@RequestBody ProdutoModelo pm) {
         return ps.cadastrarAlterar(pm, "cadastrar");
     }
 
-    @GetMapping("/UsuarioListar")
-    public Iterable<UsuarioModelo> listar() {
+    @GetMapping("/listar")
+    public Iterable<ProdutoModelo> listar() {
         return ps.listar();
 
     }
 
-    @GetMapping("/U")
+    @GetMapping("/")
     public String rota() {
-        return "API de user funcionando!";
+        return "API de produtos funcionando!";
     }
 }

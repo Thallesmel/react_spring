@@ -1,16 +1,15 @@
-package br.com.api.produtos.servico;
+package modules.user.services;
 
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.ResponseBody;
-
 import br.com.api.produtos.modelo.RespostaModelo;
-import br.com.api.produtos.modelo.UsuarioModelo;
-import br.com.api.produtos.repositorio.UsuarioRepositorio;
+import modules.user.model.UsuarioModelo;
+import modules.user.repository.UsuarioRepositorio;
 
 @Service
 public class UsuarioServico {
@@ -27,7 +26,7 @@ public class UsuarioServico {
     }
 
     // Método para listar um Usuario
-    public Optional<UsuarioModelo> selecionar(Long id) {
+    public Optional<UsuarioModelo> selecionar(UUID id) {
         return ur.findById(id);
     }
 
@@ -56,7 +55,7 @@ public class UsuarioServico {
     }
 
     // Método para remover produtos
-    public ResponseEntity<RespostaModelo> remover(long codigo) {
+    public ResponseEntity<RespostaModelo> remover(UUID codigo) {
 
         ur.deleteById(codigo);
         rm.setMensagem("O Usuario foi removido com sucesso!");

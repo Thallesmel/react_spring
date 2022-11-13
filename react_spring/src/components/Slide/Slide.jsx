@@ -7,7 +7,8 @@ import { EffectFade } from 'swiper';
 
 const Slide = () => {
   return (
-    <Swiper
+   <div className="Slidd">
+     <Swiper
       modules={[EffectFade]}
       effect='fade'
       spaceBetween={1}
@@ -136,6 +137,7 @@ const Slide = () => {
         </h5>
       </SwiperSlide>
     </Swiper>
+   </div>
   );
 };
 export default Slide;
